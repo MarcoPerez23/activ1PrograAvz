@@ -126,25 +126,19 @@ function clickEval(){
 
     actualElemento.innerHTML = actual;
     resultadoElemento.innerHTML = resultado;
-    update();
+    actualizarHistorial();
 }
 
-function update() {
-
-    for (var i = 0; i < historial.length; i++) {
-       
-       var letters;
-       var ul = document.getElementById("listaHistorial");
-       var li = document.createElement("li");
-
-       li.appendChild(document.createTextNode(historial[i]));
-       ul.appendChild(li);
-
-       letters += "<li>"  + historial[i] + "</li>";
-    }
-
- document.getElementById("listaHistorial").innerHTML = letters;
-
+function actualizarHistorial() {
+    var temp = historial.slice(-1);
+    var x = document.createElement("UL");
+    x.setAttribute("id", "listaHistorial");
+    document.body.appendChild(x);
+  
+    var y = document.createElement("LI");
+    var t = document.createTextNode(temp);
+    y.appendChild(t);
+    document.getElementById("listaHistorial").appendChild(y);
 }
 
 mousetrap.bind('1',clickUno)

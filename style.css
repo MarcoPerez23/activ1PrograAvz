@@ -2,6 +2,10 @@
     display: grid;
     grid-template-columns: auto auto auto auto;
 }
+.grid-container2 {
+    display: display-box;
+    grid-template-columns: auto auto;
+}
 
 .numeroDisplay {
     text-align: right;
@@ -13,7 +17,7 @@
     padding-right: 15px;
 }
 
-h2 {
+h2, h3 {
     text-align: center;
     color: green;
     font-size: 26px;
@@ -24,7 +28,7 @@ h2 {
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
-    padding: 15px 32px;
+
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -52,4 +56,19 @@ h2 {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+  }
+
+  .historial {
+    text-align: right;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-top: 10px;
+    padding-right: 15px;
+  }
+
+  .calculadora {
+    display: grid;
+    grid-template-columns: auto auto;
   }

@@ -5,6 +5,7 @@ var resultadoElemento = document.getElementById('resultado');
 
 var actual = '';
 var resultado = 0;
+var historial = [];
 
 document.getElementById('botonC').onclick = clickClear;
 document.getElementById('botonUno').onclick = clickUno;
@@ -24,6 +25,7 @@ document.getElementById('division').onclick = clickDivision;
 document.getElementById('mult').onclick = clickMult;
 document.getElementById('eval').onclick = clickEval;
 document.getElementById('botonDel').onclick = clickBorrar;
+document.getElementById('ans').onclick = clickans;
 
 function clickBorrar(){
     let temp = actual.slice(0,-1);
@@ -31,11 +33,17 @@ function clickBorrar(){
     actualElemento.innerHTML = actual;
 }
 
+function clickans(){
+    let temp = resultado;
+    actual += temp;
+    actualElemento.innerHTML = actual;
+}
+
 function clickClear(){
     actual = '';
-    //resultado = 0;
+    resultado = 0;
     actualElemento.innerHTML = actual;
-    //resultadoElemento.innerHTML = resultado;
+    resultadoElemento.innerHTML = resultado;
 }
 
 function clickUno(){
@@ -111,7 +119,32 @@ function clickDivision(){
 function clickEval(){
     let temp = eval(actual);
     resultado = parseInt(temp);
+    actual = '';
+
+    historial.push(resultado);
+    //console.log(historial);
+
+    actualElemento.innerHTML = actual;
     resultadoElemento.innerHTML = resultado;
+    update();
+}
+
+function update() {
+
+    for (var i = 0; i < historial.length; i++) {
+       
+       var letters;
+       var ul = document.getElementById("listaHistorial");
+       var li = document.createElement("li");
+
+       li.appendChild(document.createTextNode(historial[i]));
+       ul.appendChild(li);
+
+       letters += "<li>"  + historial[i] + "</li>";
+    }
+
+ document.getElementById("listaHistorial").innerHTML = letters;
+
 }
 
 mousetrap.bind('1',clickUno)

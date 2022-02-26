@@ -2,3 +2,54 @@
     display: grid;
     grid-template-columns: auto auto auto auto;
 }
+
+.numeroDisplay {
+    text-align: right;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 22px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-top: 10px;
+    padding-right: 15px;
+}
+
+h2 {
+    text-align: center;
+    color: green;
+    font-size: 26px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.botonOp {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    text-decoration: solid;
+  }
+
+  .botonCalc {
+    background-color: #157fc5;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+  }
+
+  .botonBorrar {
+    background-color: #c51515;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
